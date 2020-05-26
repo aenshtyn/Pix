@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http  import HttpResponse
 import datetime as dt
 
@@ -16,4 +16,4 @@ def latest_pics(request):
             </body>
         </html>
             '''
-    return HttpResponse(html)
+    return render(request, 'all-pics/lates-pics.html', {"date": date,})
