@@ -17,3 +17,6 @@ class AuthorTestClass(TestCase):
         self.moha.save_author()
         authors = Author.objects.all()
         self.assertTrue(len(authors) > 0)
+
+class PictureTestClass(TestCase):
+    

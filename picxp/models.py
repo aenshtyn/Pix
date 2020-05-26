@@ -8,8 +8,13 @@ class Author(models.Model):
 
     def __str__(self):
         return self.first_name
+
+    
     class Meta:
         ordering = ['first_name']
+
+    def save_author(self):
+        self.save()
 
 
 class tags(models.Model):
