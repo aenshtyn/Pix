@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'pix.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tribune',
+        'NAME': 'pix',
         'USER': 'mohamed',
     'PASSWORD':'1111',
     }
