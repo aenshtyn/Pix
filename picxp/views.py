@@ -17,3 +17,10 @@ def latest_pics(request):
         </html>
             '''
     return render(request, 'all-pics/latest-pics.html', {"date": date,})
+
+def picture(request,picture_id):
+    try:
+        picture = Picture.object.get(id = picture_id)
+    except DoesNotExist:
+        raise Htto404()
+    return render(request,"all-pics/picture.html"), {"picture": picture}
