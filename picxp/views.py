@@ -16,4 +16,4 @@ def latest_pics(request):
             </body>
         </html>
             '''
-    return render(request, 'all-pics/lates-pics.html', {"date": date,})
+    return render(request, 'all-pics/latest-pics.html', {"date": date,})
