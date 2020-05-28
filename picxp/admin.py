@@ -4,9 +4,9 @@ from .models import Author, tags, Picture
 # Register your models here.
 
 
-class ArticleAdmin(admin.ModelAdmin):
+class PictureAdmin(admin.ModelAdmin):
     filter_horizontal =('tags',)
     
 admin.site.register(Author)
-admin.site.register(Picture)
+admin.site.register(Picture,PictureAdmin)
 admin.site.register(tags)

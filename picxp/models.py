@@ -21,12 +21,16 @@ class tags(models.Model):
     name = models.CharField(max_length =30)
 
     def __str__(self):
-        return self.namee
+        return self.name
 
+        
 class Picture(models.Model):
     title = models.CharField(max_length =60)
     post = models.TextField()
     author = models.ForeignKey(Author)
-    # tags = models.ManyToManyField(tags)
+    tags = models.ManyToManyField(tags)
     pub_date = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='pictures/')
+
+    def __str__(self):
+        return self.title
