@@ -24,3 +24,4 @@ def picture(request,picture_id):
     except DoesNotExist:
         raise Htto404()
     return render(request,"all-pics/picture.html"), {"picture": picture}
+
