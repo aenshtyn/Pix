@@ -26,11 +26,19 @@
 
     {% include "navbar.html" %}
 
+
     {% block content %} 
     
-    
+        <div class="jumbotron">
     <h1 class='text-center'>Pictures for {{date|date:"l d-F Y"}}</h1> 
-    
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+        </div>
+
 
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
@@ -58,12 +66,13 @@
             </div>
         </div>
     </div>
+    </div>
 
 
     
     
     
-    
+    </div>
     {%endblock%}
 
     {% block scripts %}
