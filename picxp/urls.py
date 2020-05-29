@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns=[
-    url('^$',views.latest_pics,name='latestPics')
+    url('^$',views.index, name='index')
 #     url('^picture/(\d+)',views.picture,name = 'picture')
 ]
 
