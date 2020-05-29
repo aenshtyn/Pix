@@ -1,22 +1,13 @@
 from django.shortcuts import render, redirect
-from django.http  import HttpResponse
+from django.http  import HttpResponse,  Http404
 import datetime as dt
-
-# Create your views here.
-def welcome(request):
-    return render(request, 'welcome.html')
+from .models import Picture
 
 
 def latest_pics(request):
     date = dt.date.today()
-    html = f'''
-        <html>
-            <body>
-                <h1> {date.day}-{date.month}-{date.year}</h1>
-            </body>
-        </html>
-            '''
-    return render(request, 'all-pics/latest-pics.html', {"date": date,})
+    pics = Picture.pics_new()
+    return render(request, 'all-pics/latest-pics.html', {"date": date,"pics":pics})
 
 def picture(request,picture_id):
     try:

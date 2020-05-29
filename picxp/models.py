@@ -1,4 +1,5 @@
 from django.db import models
+import datetime as dt
 
 # Create your models here.
 class Author(models.Model):
@@ -23,14 +24,20 @@ class tags(models.Model):
     def __str__(self):
         return self.name
 
-        
+
 class Picture(models.Model):
     title = models.CharField(max_length =60)
     post = models.TextField()
     author = models.ForeignKey(Author)
     tags = models.ManyToManyField(tags)
     pub_date = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to='pictures/')
+    picture_image = models.ImageField(upload_to= 'pictures/' )
 
     def __str__(self):
         return self.title
+
+    @classmethod
+    def pics_new(cls):
+        today = dt.date.today()
+        pics = cls.objects.filter(pub_date__date = today)
+        return pics

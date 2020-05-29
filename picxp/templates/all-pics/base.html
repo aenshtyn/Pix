@@ -29,55 +29,22 @@
 
     {% block content %} 
     
-        <div class="jumbotron">
+    <div class="jumbotron">
     <h1 class='text-center'>Pictures for {{date|date:"l d-F Y"}}</h1> 
-
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-            <p class="card-text"> {{ picture_item.title }} </p>
-        </div>
-
-
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-        Open up Image
-    </button>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                    
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-  
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-
+    <hr/>
 
     
     
-    
-    </div>
     {%endblock%}
 
     {% block scripts %}
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
     {% bootstrap_javascript %}
     {% endblock %}
+
+
 </body>
 
 </html>
