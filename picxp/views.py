@@ -4,10 +4,10 @@ import datetime as dt
 from .models import Picture
 
 
-def latest_pics(request):
+def index(request):
     date = dt.date.today()
-    pics = Picture.pics_new()
-    return render(request, 'all-pics/latest-pics.html', {"date": date,"pics":pics})
+    pics = Picture.objects.all()
+    return render(request, 'all-pics/index.html', {"date": date,"pics":pics})
 
 def picture(request,picture_id):
     try:
