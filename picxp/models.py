@@ -31,7 +31,7 @@ class Picture(models.Model):
     author = models.ForeignKey(Author)
     tags = models.ManyToManyField(tags)
     pub_date = models.DateTimeField(auto_now_add=True)
-    picture_image = models.ImageField(upload_to= 'pictures/' )
+    picture = models.ImageField(upload_to= 'pictures/' )
 
     def __str__(self):
         return self.title
@@ -41,3 +41,9 @@ class Picture(models.Model):
         today = dt.date.today()
         pics = cls.objects.filter(pub_date__date = today)
         return pics
+
+    def save_picture(self):
+        self.save()
+
+    def delete_picture(self):
+        self.delete()
