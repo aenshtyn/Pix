@@ -1,6 +1,18 @@
-from django.shortcuts import render
-from django.http  import HttpResponse
+from django.shortcuts import render, redirect
+from django.http  import HttpResponse,  Http404
+import datetime as dt
+from .models import Picture
 
-# Create your views here.
-def welcome(request):
-    return HttpResponse('Welcome to Picxp')
+
+def index(request):
+    date = dt.date.today()
+    pics = Picture.objects.all()
+    return render(request, 'all-pics/index.html', {"date": date,"pics":pics})
+
+def picture(request,picture_id):
+    try:
+        picture = Picture.object.get(id = picture_id)
+    except DoesNotExist:
+        raise Htto404()
+    return render(request,"all-pics/picture.html"), {"picture": picture}
+
