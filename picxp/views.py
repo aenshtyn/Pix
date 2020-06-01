@@ -13,6 +13,6 @@ def picture(request,picture_id):
     try:
         picture = Picture.object.get(id = picture_id)
     except DoesNotExist:
-        raise Htto404()
+        raise Http404()
     return render(request,"all-pics/picture.html"), {"picture": picture}
 

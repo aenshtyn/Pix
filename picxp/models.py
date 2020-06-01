@@ -1,40 +1,24 @@
 from django.db import models
 import datetime as dt
 
-# Create your models here.
-class Author(models.Model):
-    first_name = models.CharField(max_length =30)
-    last_name = models.CharField(max_length =30)
-    email = models.EmailField()
-
-    def __str__(self):
-        return self.first_name
-
-    
-    class Meta:
-        ordering = ['first_name']
-
-    def save_author(self):
-        self.save()
-
-
-class tags(models.Model):
+class location(models.Model):
     name = models.CharField(max_length =30)
 
     def __str__(self):
         return self.name
 
 
-class Picture(models.Model):
-    title = models.CharField(max_length =60)
-    post = models.TextField()
-    author = models.ForeignKey(Author)
-    tags = models.ManyToManyField(tags)
+class Image(models.Model):
+    image = models.ImageField(upload_to = 'images/')
+    name = models.CharField(max_length =60)
+    description = models.TextField()
+    location = models.ForeignKey(Author)
+    category = models.ManyToManyField(tags)
     pub_date = models.DateTimeField(auto_now_add=True)
-    picture = models.ImageField(upload_to= 'pictures/' )
+
 
     def __str__(self):
-        return self.title
+        return self.name
 
     @classmethod
     def pics_new(cls):
@@ -42,8 +26,8 @@ class Picture(models.Model):
         pics = cls.objects.filter(pub_date__date = today)
         return pics
 
-    def save_picture(self):
+    def save_image(self):
         self.save()
 
-    def delete_picture(self):
+    def delete_image(self):
         self.delete()
