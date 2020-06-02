@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Author, Picture, tags
+from .models import Author, Image, tags
 
 
 # Create your tests here.
@@ -18,5 +18,5 @@ class AuthorTestClass(TestCase):
         authors = Author.objects.all()
         self.assertTrue(len(authors) > 0)
 
-class PictureTestClass(TestCase):
+class ImageTestClass(TestCase):
     

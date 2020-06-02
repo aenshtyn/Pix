@@ -2,3 +2,14 @@ h1
 {
   color: #daa520;
 }
+  body{
+   scroll-behavior: smooth;
+  background-image:url(../images/background.jpeg);
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:cover;
+  
+
+  }
+  

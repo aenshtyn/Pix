@@ -1,18 +1,18 @@
 from django.shortcuts import render, redirect
 from django.http  import HttpResponse,  Http404
 import datetime as dt
-from .models import Picture
+from .models import Image
 
 
 def index(request):
     date = dt.date.today()
-    pics = Picture.objects.all()
-    return render(request, 'all-pics/index.html', {"date": date,"pics":pics})
+    images = Image.objects.all()
+    return render(request, 'all-pics/index.html', {"date": date,"images":images})
 
-def picture(request,picture_id):
+def image(request,image_id):
     try:
-        picture = Picture.object.get(id = picture_id)
+        image = Image.object.get(id = image_id)
     except DoesNotExist:
         raise Http404()
-    return render(request,"all-pics/picture.html"), {"picture": picture}
+    return render(request,"all-images/image.html"), {"image": image}
 

@@ -4,8 +4,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns=[
-    url('^$',views.index, name='index')
-#     url('^picture/(\d+)',views.picture,name = 'picture')
+    url('^$',views.index, name='index'),
+#     url('^image/(\d+)',views.image,name = 'image')
 ]
 
 if settings.DEBUG:

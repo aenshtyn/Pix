@@ -17,13 +17,16 @@ class Image(models.Model):
     image = models.ImageField(upload_to = 'images/')
     name = models.CharField(max_length =60)
     description = models.TextField()
-    location = models.ForeignKey(Author)
+    location = models.ManyToManyField(location)
     category = models.ManyToManyField(category)
     pub_date = models.DateTimeField(auto_now_add=True)
 
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        ordering = ['name']
 
     @classmethod
     def pics_new(cls):
@@ -36,3 +39,11 @@ class Image(models.Model):
 
     def delete_image(self):
         self.delete()
+
+    # def update_image(self):
+
+    # def get_image_by_id(id):
+
+    # def search_image(category):
+
+    # def filter_by_location(location):
