@@ -1,18 +1,31 @@
 from django.shortcuts import render, redirect
 from django.http  import HttpResponse,  Http404
 import datetime as dt
-from .models import Picture
+from .models import Image, Location
 
 
 def index(request):
     date = dt.date.today()
-    pics = Picture.objects.all()
-    return render(request, 'all-pics/index.html', {"date": date,"pics":pics})
+    images = Image.all_pics()
+    return render(request, 'all-pics/index.html', {"date": date, "images": images})
 
-def picture(request,picture_id):
+def image(request,image_id):
     try:
-        picture = Picture.object.get(id = picture_id)
+        image = Image.object.get(id = image_id)
     except DoesNotExist:
-        raise Htto404()
-    return render(request,"all-pics/picture.html"), {"picture": picture}
+        raise Http404()
+    return render(request,"all-images/image.html"), {"image": image}
 
+def search_results(request):
+
+    if 'image' in request.GET and request.GET["image"]:
+        search_term = request.GET.get("image")
+        searched_images = Image.search_by_category(category)
+        message = f"{search_term}"
+        print(searched_images)
+
+        return render(request, 'all-pics/search.html',{"message":message,"images": searched_images})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'all-pics/search.html',{"message":message})
