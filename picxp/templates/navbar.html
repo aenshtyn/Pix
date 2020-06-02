@@ -13,6 +13,15 @@
             <div class="navbar-header">
                 <a class="navbar-brand" href="{% url 'index' %}" >Picxp</a>
 
+                 <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdown">
+                    {% for location in locations %}
+                    <ul class="dropdown-item">
+                        <li><a 
+                          href="/location/{{location.name}}">{{location.name}}</a></li>
+                    </ul>
+
+                    {% endfor %}
+                </div>
                
             </div>
             <!-- Adding a search form  -->

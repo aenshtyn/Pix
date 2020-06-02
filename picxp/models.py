@@ -39,9 +39,6 @@ class Image(models.Model):
     def __str__(self):
         return self.name
 
-    class Meta:
-        ordering = ['name']
-
     @classmethod
     def all_pics(cls):
         today = dt.date.today()
@@ -58,6 +55,9 @@ class Image(models.Model):
 
     def delete_image(self):
         self.delete()
+
+    class Meta:
+        ordering = ['name']
 
     # def update_image(self):
 
