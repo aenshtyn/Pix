@@ -29,9 +29,14 @@ class Image(models.Model):
         ordering = ['name']
 
     @classmethod
-    def pics_new(cls):
+    def all_pics(cls):
         today = dt.date.today()
         pics = cls.objects.filter(pub_date__date = today)
+        return pics
+
+    @classmethod
+    def search_by_category(cls,search_term):
+        pics = cls.objects.filter(title__icontains=search_term)
         return pics
 
     def save_image(self):
