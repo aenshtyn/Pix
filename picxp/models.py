@@ -1,24 +1,38 @@
 from django.db import models
 import datetime as dt
 
-class location(models.Model):
+class Location(models.Model):
     name = models.CharField(max_length =30)
 
     def __str__(self):
         return self.name
 
-class category(models.Model):
+    def save_location(self):
+        self.save()
+
+    def delete_location(self):
+        self.delete()
+
+
+class Category(models.Model):
     name = models.CharField(max_length = 30 )
 
     def __str__(self):
         return self.name
 
+    def save_category(self):
+        self.save()
+
+    def delete_category(self):
+        self.delete()
+
+
 class Image(models.Model):
     image = models.ImageField(upload_to = 'images/')
     name = models.CharField(max_length =60)
     description = models.TextField()
-    location = models.ManyToManyField(location)
-    category = models.ManyToManyField(category)
+    location = models.ForeignKey(Location)
+    category = models.ForeignKey(Category)
     pub_date = models.DateTimeField(auto_now_add=True)
 
 
