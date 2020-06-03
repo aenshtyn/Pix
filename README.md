@@ -22,41 +22,53 @@ This is a Django application for personal gallery that allows a user to upload i
 * View photos based on the location they were taken.  
 
 
-## Setup/Installation Requirements
 
-* python3.8
-* pip
-* virtualenv
+## Setup and Installation  
+To get the project .......  
+  
+##### Cloning the repository:  
+ ```bash 
+https://github.com/aenshtyn/picxp.git 
+```
+##### Navigate into the folder and install requirements  
+ ```bash 
+cd instagram pip install -r requirements.txt 
+```
+##### Install and activate Virtual  
+ ```bash 
+- python3 -m venv virtual - source virtual/bin/activate  
+```  
+##### Install Dependencies  
+ ```bash 
+ pip install -r requirements.txt 
+```  
+ ##### Setup Database  
+  SetUp your database User,Password, Host then make migrate  
+ ```bash 
+python manage.py makemigrations pix
+ ``` 
+ Now Migrate  
+ ```bash 
+ python manage.py migrate 
+```
+##### Run the application  
+ ```bash 
+ python manage.py runserver 
+``` 
+##### Running the application  
+ ```bash 
+ python manage.py server 
+```
+##### Testing the application  
+ ```bash 
+ python manage.py test 
+```
+Open the application on your browser `127.0.0.1:8000`.  
+  
 
-## Cloning
-* In your terminal:
+## Known Bugs  
 
-  $ git clone https://github.com/aenshtyn/Pixp/
-
-  $ cd Personal-Blog
-
-## Running the Application
-* Creating the virtual environment
-
-        $ python3.8 -m venv --without-pip virtual
-        $ source virtual/bin/env
-        $ curl https://bootstrap.pypa.io/get-pip.py | python
-
-* Installing Flask and other Modules
-
-        $ python3.8 -m pip install Flask
-        $ python3.8 -m pip install Flask-Bootstrap
-        $ python3.8 -m pip install Flask-Script
-
-* To run the application, in your terminal:
-
-        python3.8 manage.py runserver
-
-## Testing the Application
-
-* To run the tests for the class files:
-
-        $ python3.8 manage.py test
+* Still working on the App... Still has some bugs to be cleared
 
 ## Technologies Used
 
