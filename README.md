@@ -2,7 +2,7 @@
 
 ### Live site
 
-[Personal-Blog](https://picxp.herokuapp.com/)
+[Picture Gallery](https://picxp.herokuapp.com/)
 
 
 #### Built by
