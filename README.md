@@ -68,6 +68,11 @@ This is a Django application for personal gallery that allows a user to upload i
 * Postgresql
 * Django
 
+## Bugs 
+
+* My CSS styling isnt loading
+* on local i get a server error
+
 ## Support and contact details
 
 If you have any issues or questions you can contact me at demahom93@gmail.com
