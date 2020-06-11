@@ -22,3 +22,6 @@ $(document).ready(function () {
     $(this).addClass("active");
 
 });
+$('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+})
