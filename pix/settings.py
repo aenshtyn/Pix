@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'c*x%n*gk93gk#jt7f2pxy3wd+lobru0!z@j^fests##aw4m!lr'
+SECRET_KEY = '4$1et$7g)x*889xr4&gy-f-w^wq3%8q6j5qg0-o3eulna_t=ed'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'picxp',
     'bootstrap3',
-
 ]
 
 MIDDLEWARE = [
@@ -80,12 +79,11 @@ WSGI_APPLICATION = 'pix.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pix',
+        'NAME': 'pixx',
         'USER': 'mohamed',
-        'PASSWORD':'1111',
+    'PASSWORD':'1111',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

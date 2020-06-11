@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/mohamed/Documents/Moringa-School-Projects/Moringa Core/Week 8/IP/Pix/virtual"
+set -gx VIRTUAL_ENV "/home/mohamed/Documents/Moringa-School-Projects/Moringa Core/Django Week 1/IP 2/Pix/virtual"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
