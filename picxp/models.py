@@ -1,8 +1,13 @@
 from django.db import models
-import datetime as dt
+
 
 class Location(models.Model):
     name = models.CharField(max_length =30)
+
+    @classmethod
+    def all_locations(cls):
+        locations = Location.objects.all()
+        return locations
 
     def __str__(self):
         return self.name
@@ -41,13 +46,17 @@ class Image(models.Model):
 
     @classmethod
     def all_pics(cls):
-        today = dt.date.today()
-        pics = cls.objects.filter(pub_date__date = today)
+        pics = Image.objects.all()
         return pics
 
     @classmethod
-    def search_by_category(cls,search_term):
-        pics = cls.objects.filter(title__icontains=search_term)
+    def images_by_location(cls, location):
+        pic_location = Image.objects.filter(Location)
+        return pic_location
+
+    @classmethod
+    def search_category(cls,category):
+        pics = cls.objects.filter(category__name__icontains=category)
         return pics
 
     def save_image(self):

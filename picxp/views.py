@@ -5,27 +5,28 @@ from .models import Image, Location
 
 
 def index(request):
-    date = dt.date.today()
     images = Image.all_pics()
-    return render(request, 'all-pics/index.html', {"date": date, "images": images})
+    locations = Location.all_locations()
 
-def image(request,image_id):
-    try:
-        image = Image.object.get(id = image_id)
-    except DoesNotExist:
-        raise Http404()
-    return render(request,"all-images/image.html"), {"image": image}
+    return render(request, 'index.html', {"locations": locations, "images": images})
 
 def search_results(request):
 
     if 'image' in request.GET and request.GET["image"]:
-        search_term = request.GET.get("image")
-        searched_images = Image.search_by_category(category)
-        message = f"{search_term}"
+        category = request.GET.get("image")
+        searched_images = Image.search_category(category)
+        message = f"{category}"
         print(searched_images)
 
-        return render(request, 'all-pics/search.html',{"message":message,"images": searched_images})
+        return render(request, 'search.html',{"message":message,"images": searched_images})
 
     else:
-        message = "You haven't searched for any term"
-        return render(request, 'all-pics/search.html',{"message":message})
+        message = "You haven't searched for any category"
+        return render(request, 'search.html',{"message":message})
+
+
+def location_captured (request, location):
+    pics = Image.images_by_location(location)
+    print(pics)
+
+    return render (request, 'location.html', {'location_pics': pics})

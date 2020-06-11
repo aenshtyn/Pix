@@ -1,47 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+<nav class="navbar navbar-expand-lg bg-primary navbar-light sticky-top">
 
-<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-<body>
-<nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="{% url 'index' %}" >Picxp</a>
+    <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+        <li class="nav-item active">
+            <a class="nav-link home" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        {% for location in locations %}
+        <ul class="navbar-nav">
 
-                 <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdown">
-                    {% for location in locations %}
-                    <ul class="dropdown-item">
-                        <li><a 
-                          href="/location/{{location.name}}">{{location.name}}</a></li>
-                    </ul>
+            <li class="nav-item">
+                <a class="nav-link" href="/location/{{location.name}}">{{location.name}}</a></li> </a>
+            </li>
+            {% endfor %}
 
-                    {% endfor %}
-                </div>
-               
+
+            <form class="form-inline my-2 my-md-0" action="/search" role="search">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search Category" name="imagesearch"
+                    aria-label="Search">
+                <button class="btn btn-success btn-md my-2 my-sm-0" type="submit">Search</button>
+            </form>
             </div>
-            <!-- Adding a search form  -->
-      <div class="col-sm-4 col-md-4 navbar-right">
-
-        <form class="navbar-form" role="search" action="{% url 'search_results' %}">
-
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search Pictures" name="article">
-            <div class="input-group-btn">
-              <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-            </div>
-          </div>
-
-        </form>
-      </div>
-      <!-- search form end -->
-        </div>
-    </nav>
-
-
-</body>
-</html>
+</nav>

@@ -1,0 +1,81 @@
+{%extends 'base.html'%}
+
+{% block content %}
+{{block.super}}
+  <div class="row">
+            <div class="col-md-7">
+              <div class="container-fluid landing">
+                <a href="/" class="scroll"><button class="btn btn-info btn-bg">GALLERY</button></a>
+              
+                 </span>
+            </div>
+            </div>
+            <div class="col-md-5">
+            <span id="locations">
+                {% for location in locations %}
+                    <a class="btn btn-info btn-sm" id="btn"
+                       href="/location/{{location.name}}">{{location.name}}</a>
+                {%endfor%}
+             </span>
+            </div>
+        </div>
+
+<div class = "row">
+{% for image in images %}
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="img_5terre.jpg">
+      <img src="{{image.image.url}}" alt="Cinque Terre" width="600" height="400">
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  </div>
+</div>
+
+
+
+<div class="responsive"></div>
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myPicx" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                {{image.title}}
+            </div>
+            <div class="modal-body">
+
+                <img src="{{image.image.url}}" alt="{{image.title}}" class="card-img" width="600" height="500">
+            </div>
+            <div class="image-description">
+
+                <p class="card-text">{{ image.description }} </p>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endfor %}
+</div>
+
+
+
+
+
+
+{% endblock %}
