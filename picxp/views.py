@@ -21,7 +21,7 @@ def search_results(request):
         return render(request, 'search.html',{"message":message,"images": searched_images})
 
     else:
-        message = "You haven't searched for any category"
+        message = "Kindly Search a different Category"
         return render(request, 'search.html',{"message":message})
 
 

@@ -1,64 +1,52 @@
-h1
+
+.gallery-title
 {
-  color: #daa520;
+    font-size: 36px;
+    color: #42B32F;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 70px;
 }
-.navbar-item {
-    size: 50%;
+.gallery-title:after {
+    content: "";
+    position: absolute;
+    width: 7.5%;
+    left: 46.5%;
+    height: 45px;
+    border-bottom: 1px solid #5e5e5e;
 }
-.navbar .container-fluid>.navbar-header {
-  float: left;
-  margin-right: 10px;
+.filter-button
+{
+    font-size: 18px;
+    border: 1px solid #42B32F;
+    border-radius: 5px;
+    text-align: center;
+    color: #42B32F;
+    margin-bottom: 30px;
+
 }
-.navbar .navbar-nav {
-  float: left;
-  margin: 5px;
+.filter-button:hover
+{
+    font-size: 18px;
+    border: 1px solid #42B32F;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #42B32F;
+
 }
-.nav>li {
-  float: left;
-}
-div.gallery {
-  border: 1px solid #ccc;
+.btn-default:active .filter-button:active
+{
+    background-color: #42B32F;
+    color: white;
 }
 
-div.gallery:hover {
-  border: 1px solid #777;
-}
-
-div.gallery img {
-  width: 100%;
-  height: auto;
-}
-
-div.desc {
-  padding: 15px;
-  text-align: center;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.responsive {
-  padding: 0 6px;
-  float: left;
-  width: 24.99999%;
-}
-
-@media only screen and (max-width: 700px) {
-  .responsive {
-    width: 49.99999%;
-    margin: 6px 0;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .responsive {
+.port-image
+{
     width: 100%;
-  }
 }
 
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+.gallery_product
+{
+    margin-bottom: 30px;
 }
